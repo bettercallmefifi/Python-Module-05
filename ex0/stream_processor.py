@@ -84,34 +84,30 @@ class LogProcessor(DataProcessor):
 
 
 def run_tests() -> None:
-    print("=== CODE NEXUS - DATA PROCESSOR FOUNDATION ===")
+    print("=== CODE NEXUS - DATA PROCESSOR FOUNDATION ===\n")
 
-    # Numeric data
     print("Initializing Numeric Processor...")
     num_processor = NumericProcessor()
     numeric_data = [1, 2, 3, 4, 5]
-    print(f'Processing data: "{numeric_data}"')
+    print(f"Processing data: {numeric_data}")
     result = num_processor.process(numeric_data)
     print(num_processor.format_output(result))
 
-    # Text data
-    print("Initializing Text Processor...")
+    print("\nInitializing Text Processor...")
     text_processor = TextProcessor()
     text_data = "Hello Nexus World"
     print(f'Processing data: "{text_data}"')
     result = text_processor.process(text_data)
     print(text_processor.format_output(result))
 
-    # Log data
-    print("Initializing Log Processor...")
+    print("\nInitializing Log Processor...")
     log_processor = LogProcessor()
     log_data = "ERROR: Connection timeout"
     print(f'Processing data: "{log_data}"')
     result = log_processor.process(log_data)
     print(log_processor.format_output(result))
 
-    # Polymorphic demo
-    print("=== Polymorphic Processing Demo ===")
+    print("\n=== Polymorphic Processing Demo ===")
     processors: list[DataProcessor] = [
         NumericProcessor(),
         TextProcessor(),
@@ -126,7 +122,7 @@ def run_tests() -> None:
         result = processor.process(data)
         print(processor.format_output(result))
 
-    print("Foundation systems online. Nexus ready for advanced streams.")
+    print("\nFoundation systems online. Nexus ready for advanced streams.")
 
 
 if __name__ == "__main__":
