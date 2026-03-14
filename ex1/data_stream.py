@@ -100,8 +100,8 @@ class StreamProcessor:
         self.streams.append(stream)
 
     def process(self, batches: Dict[str, List[Any]]) -> None:
-        print("=== Polymorphic Stream Processing ===")
-        print("Processing mixed stream types through unified interface...")
+        print("\n=== Polymorphic Stream Processing ===")
+        print("Processing mixed stream types through unified interface...\n")
         print("Batch 1 Results:")
 
         for stream in self.streams:
@@ -127,17 +127,17 @@ class StreamProcessor:
             criteria="buy",
         )
 
-        print("Stream filtering active: High-priority data only")
+        print("\nStream filtering active: High-priority data only")
         print(
             f"Filtered results: {len(sensor_filtered)} "
             "critical sensor alerts, "
             f"{len(transaction_filtered)} large transaction"
         )
-        print("All streams processed successfully. Nexus throughput optimal")
+        print("\nAll streams processed successfully. Nexus throughput optimal")
 
 
 def main() -> None:
-    print("=== CODE NEXUS - POLYMORPHIC STREAM SYSTEM ===")
+    print("=== CODE NEXUS - POLYMORPHIC STREAM SYSTEM ===\n")
 
     sensor = SensorStream("SENSOR_001")
     print(
@@ -152,7 +152,7 @@ def main() -> None:
 
     transaction = TransactionStream("TRANS_001")
     print(
-        "Initializing Transaction Stream...\n"
+        "\nInitializing Transaction Stream...\n"
         f"Stream ID: {transaction.stream_id}, "
         f"Type: {transaction.stream_type}"
     )
@@ -168,7 +168,7 @@ def main() -> None:
 
     event = EventStream("EVENT_001")
     print(
-        "Initializing Event Stream...\n"
+        "\nInitializing Event Stream...\n"
         f"Stream ID: {event.stream_id}, Type: {event.stream_type}"
     )
     print("Processing event batch: [login, error, logout]")
@@ -188,4 +188,5 @@ def main() -> None:
     )
 
 
-main()
+if __name__ == "__main__":
+    main()
