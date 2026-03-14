@@ -97,13 +97,13 @@ class NexusManager:
 
 
 def run_tests():
-    print("=== CODE NEXUS - ENTERPRISE PIPELINE SYSTEM ===")
+    print("=== CODE NEXUS - ENTERPRISE PIPELINE SYSTEM ===\n")
     print("Initializing Nexus Manager...")
-    print("Pipeline capacity: 1000 streams/second")
+    print("Pipeline capacity: 1000 streams/second\n")
     print("Creating Data Processing Pipeline...")
     print("Stage 1: Input validation and parsing")
     print("Stage 2: Data transformation and enrichment")
-    print("Stage 3: Output formatting and delivery")
+    print("Stage 3: Output formatting and delivery\n")
 
     manager = NexusManager()
     stages = [InputStage(), TransformStage(), OutputStage()]
@@ -121,22 +121,24 @@ def run_tests():
     manager.add_pipeline(csv_pipeline)
     manager.add_pipeline(stream_pipeline)
 
-    print("=== Multi-Format Data Processing ===")
+    print("=== Multi-Format Data Processing ===\n")
     print(json_pipeline.process(
         {"sensor": "temp", "value": 23.5, "unit": "C"}
     ))
+    print()
     print(csv_pipeline.process("user,action,timestamp"))
+    print()
     print(stream_pipeline.process(
         [21.5, 22.0, 22.8, 21.9, 22.3]
     ))
 
-    print("=== Pipeline Chaining Demo ===")
+    print("\n=== Pipeline Chaining Demo ===")
     print("Pipeline A -> Pipeline B -> Pipeline C")
-    print("Data flow: Raw -> Processed -> Analyzed -> Stored")
+    print("Data flow: Raw -> Processed -> Analyzed -> Stored\n")
     print("Chain result: 100 records processed through 3-stage pipeline")
-    print("Performance: 95% efficiency, 0.2s total processing time")
+    print("Performance: 95% efficiency, 0.2s total processing time\n")
 
-    print("=== Error Recovery Test ===")
+    print("\n=== Error Recovery Test ===")
     print("Simulating pipeline failure...")
     try:
         json_pipeline.process(123)
@@ -145,7 +147,7 @@ def run_tests():
         print("Recovery initiated: Switching to backup processor")
         print("Recovery successful: Pipeline restored, processing resumed")
 
-    print("Nexus Integration complete. All systems operational")
+    print("\nNexus Integration complete. All systems operational")
 
 
 run_tests()
